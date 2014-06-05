@@ -12,7 +12,7 @@ attr_reader :name, :breed
   def shoot
     @counter += 1
 
-    if cranky?
+    if cranky? || @standing == false
       "NO!"
     else
       "Twang!!!"
@@ -22,7 +22,7 @@ attr_reader :name, :breed
   def run
     @counter += 1
 
-    if cranky?
+    if cranky? || @standing == false
       "NO!"
     else
       "Clop clop clop clop!!!"
@@ -38,7 +38,23 @@ attr_reader :name, :breed
   end
 
   def sleep
-    "NO!" if @standing
+    if @standing == true
+      "NO!"
+    else
+      @counter = 0
+    end
+  end
+
+  def lay_down
+    @standing = false
+  end
+
+  def laying?
+    @standing == false
+  end
+
+  def stand_up
+    @standing = true
   end
 
 end

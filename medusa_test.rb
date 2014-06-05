@@ -18,7 +18,6 @@ class MedusaTest < Minitest::Test
 
   def test_has_statues
     medusa = Medusa.new("Cassiopeia")
-
     assert medusa.respond_to?(:statues)
   end
 

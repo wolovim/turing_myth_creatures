@@ -12,14 +12,10 @@ class Werewolf
   end
 
   def werewolf?
-    @human == false
+    !@human
   end
 
   def change!
-    if @human == true
-      @human = false
-    else
-      @human = true
-    end
+    @human = !@human
   end
 end
